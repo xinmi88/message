@@ -1,0 +1,96 @@
+@message-prefix-cls: ~"@{vm-prefix}message";
+* {
+  margin: 0 ;
+}
+.@{message-prefix-cls} {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  transition: opacity .3s, transform .4s;
+  overflow: hidden;
+  top: calc(50% - 26px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88%;
+  padding: 0;
+  box-shadow: 2px 4px 6px 0px rgba(0, 0 ,0 , 0.4);
+  border-radius: 8px;
+
+  &__group {
+    width: 100%;
+    height: 100% ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__inner {
+    width: 100%;
+    height: 100% ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff7002;
+  }
+  &_warning {
+    width: 100%;
+    height: 100% ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:  5px 10px;
+    min-height: 52px;
+  }
+  &_success {
+    width: 100%;
+    height: 100% ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff7002;
+    color: #fff ;
+    padding:  5px 10px;
+    min-height: 52px;
+  }
+
+  &_error {
+    width: 100% ;
+    height: 100% ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: red;
+    color: #fff;
+    padding:  5px 10px;
+    min-height: 52px;
+  }
+  &_info {
+    width: 100% ;
+    height: 100% ;
+    display: flex;
+    align-items: center;
+    padding:  5px 10px;
+    min-height: 52px;
+    background: red;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: @message-close-color;
+    font-size: 21px;
+    cursor: pointer;
+
+    &:hover {
+      color: @message-close-hover-color;
+    }
+  }
+
+  &-fade-enter,
+  &-fade-leave-active {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+}
